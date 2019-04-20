@@ -27,7 +27,9 @@ setTimeout(() => {
 
 setTimeout(() => {
     console.log('update one');
-    account.users[1].name = 'Joe';
+    account.users[1] = {
+        name: 'Joe'
+    };
 }, 15000);
 
 setTimeout(() => {
