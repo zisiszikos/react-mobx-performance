@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
-  "author": "pinglinh",
+  "author": "Zisis Zikos",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "6.26.3",
