@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
-import { observable } from 'mobx';
+import { observable, decorate } from 'mobx';
 import MyComponent from './MyComponent';
 
-const account = observable({
-    users: new Array(100000).fill({
-        name: 'Jack'
-    })
-});
+class Account {
+    users = [];
+}
+
+decorate(Account, {
+    users: observable
+})
+
+const account = new Account();
+
+account.users.replace(new Array(100000).fill({
+    name: 'Jack'
+}));
+
 console.log('initial render');
 
 ReactDOM.render(
